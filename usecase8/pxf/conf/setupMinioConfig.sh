@@ -19,6 +19,7 @@ if [ -f $MINIO_SITE_XML ]
 then
    echo "cp $MINIO_SITE_XML $PXF_SERVERS/minioserver"
     cp $MINIO_SITE_XML $PXF_SERVERS/minioserver/minio-core-site.xml
+    cp $MINIO_SITE_XML $PXF_SERVERS/minioserver/minio-site.xml
 else
    echo "$MINIO_SITE_XML is not found"
  # TBD

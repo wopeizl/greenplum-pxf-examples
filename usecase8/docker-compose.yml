@@ -89,12 +89,12 @@ services:
         /bin/sh -c "
         sleep 10;
         /usr/bin/mc config host add minio http://minio1:9000 minio minio123;
-        /usr/bin/mc mb testbucket;
+        /usr/bin/mc mb minio/testbucket;
         /usr/bin/mc cp /data/S3Examples/stocks.csv minio/testbucket;
         /usr/bin/mc cp /data/S3Examples/testdata.csv minio/testbucket;
         /usr/bin/mc cp /data/S3Examples/read_stocks.sql minio/testbucket;
-        /usr/bin/mc policy download minio/testbucket;
-        /usr/bin/mc policy public minio/testbucket;
+        /usr/bin/mc policy set download minio/testbucket;
+        /usr/bin/mc policy set public minio/testbucket;
         sleep 360"
       volumes:
        - ./minio:/data
